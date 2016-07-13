@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdlinSoftware.Toastr", "Edl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdlinSoftware.Toastr.Tests", "EdlinSoftware.Toastr.Tests\EdlinSoftware.Toastr.Tests.csproj", "{8991443B-BBA3-4E22-9A95-F528789336A3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellaneous", "{DD1109A0-DFDE-4653-9C39-30B554650B9E}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
