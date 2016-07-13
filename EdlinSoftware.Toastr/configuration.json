@@ -1,0 +1,15 @@
+﻿{
+  "closeButton": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-center",
+  "preventDuplicates": false,
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showMethod": "fadeIn",
+  "showDuration": "300",
+  "showEasing": "swing",
+  "hideMethod": "fadeOut",
+  "hideDuration": "1000",
+  "hideEasing": "linear"
+}
