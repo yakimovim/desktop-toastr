@@ -1,7 +1,0 @@
-language: csharp
-solution: DesktopToastr.sln
-install:
-  - nuget restore DesktopToastr.sln
-script:
-  - xbuild /p:Configuration=Release DesktopToastr.sln
-  - mono ./packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./EdlinSoftware.Toastr.Tests/bin/Release/EdlinSoftware.Toastr.Tests.dll
