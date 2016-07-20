@@ -31,6 +31,9 @@ namespace EdlinSoftware.Toastr.Tests
             Assert.Equal(ToastrHideMethods.FadeOut, configuration.HideMethod);
             Assert.Equal(1000L, configuration.HideDuration);
             Assert.Equal(ToastrEasings.Linear, configuration.HideEasing);
+            Assert.Equal(300U, configuration.Width);
+            Assert.Equal(20U, configuration.HorizontalOffset);
+            Assert.Equal(20U, configuration.VerticalOffset);
         }
 
         [Fact]
@@ -519,6 +522,96 @@ namespace EdlinSoftware.Toastr.Tests
             Assert.Equal(ToastrEasings.Linear, configuration.HideEasing);
             Assert.NotNull(errorMessage);
             Assert.Contains("something", errorMessage);
+        }
+
+        [Theory]
+        [InlineData(500)]
+        [InlineData(500L)]
+        [InlineData(500U)]
+        public void Get_ShouldSetWidth(object value)
+        {
+            var configuration = _reader.Get(new Dictionary<string, object>
+            {
+                { "width", value }
+            });
+
+            Assert.Equal(500U, configuration.Width);
+        }
+
+        [Fact]
+        public void Get_ShouldRaiseErrorEvent_IfTypeOfWidthIsNotInteger()
+        {
+            string errorMessage = null;
+            _reader.ReadingError += message => { errorMessage = message; };
+
+            var configuration = _reader.Get(new Dictionary<string, object>
+            {
+                { "width", "hello" }
+            });
+
+            Assert.Equal(300U, configuration.Width);
+            Assert.NotNull(errorMessage);
+            Assert.Contains("width", errorMessage);
+        }
+
+        [Theory]
+        [InlineData(50)]
+        [InlineData(50L)]
+        [InlineData(50U)]
+        public void Get_ShouldSetHorizontalOffset(object value)
+        {
+            var configuration = _reader.Get(new Dictionary<string, object>
+            {
+                { "hOffset", value }
+            });
+
+            Assert.Equal(50U, configuration.HorizontalOffset);
+        }
+
+        [Fact]
+        public void Get_ShouldRaiseErrorEvent_IfTypeOfHorizontalOffsetIsNotInteger()
+        {
+            string errorMessage = null;
+            _reader.ReadingError += message => { errorMessage = message; };
+
+            var configuration = _reader.Get(new Dictionary<string, object>
+            {
+                { "hOffset", "hello" }
+            });
+
+            Assert.Equal(20U, configuration.HorizontalOffset);
+            Assert.NotNull(errorMessage);
+            Assert.Contains("hOffset", errorMessage);
+        }
+
+        [Theory]
+        [InlineData(50)]
+        [InlineData(50L)]
+        [InlineData(50U)]
+        public void Get_ShouldSetVerticalOffset(object value)
+        {
+            var configuration = _reader.Get(new Dictionary<string, object>
+            {
+                { "vOffset", value }
+            });
+
+            Assert.Equal(50U, configuration.VerticalOffset);
+        }
+
+        [Fact]
+        public void Get_ShouldRaiseErrorEvent_IfTypeOfVerticalOffsetIsNotInteger()
+        {
+            string errorMessage = null;
+            _reader.ReadingError += message => { errorMessage = message; };
+
+            var configuration = _reader.Get(new Dictionary<string, object>
+            {
+                { "vOffset", "hello" }
+            });
+
+            Assert.Equal(20U, configuration.VerticalOffset);
+            Assert.NotNull(errorMessage);
+            Assert.Contains("vOffset", errorMessage);
         }
     }
 }

@@ -67,7 +67,10 @@
     </ApplicationDefinition>
     <Compile Include="Configuration\ToastrConfiguration.cs" />
     <Compile Include="Configuration\ToastrConfigurationReader.cs" />
+    <Compile Include="Models\ActionsExecutor.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\NotificationsController.cs" />
+    <Compile Include="Models\PositionCalculation\PositionCalculatorFactory.cs" />
     <Compile Include="Views\NotificationWindow.xaml.cs">
       <DependentUpon>NotificationWindow.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Error.png" />
+    <Resource Include="Images\Info.png" />
+    <Resource Include="Images\Success.png" />
+    <Resource Include="Images\Warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

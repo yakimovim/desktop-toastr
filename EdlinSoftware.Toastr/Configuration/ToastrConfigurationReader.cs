@@ -26,7 +26,10 @@ namespace EdlinSoftware.Toastr.Configuration
                 ShowEasing = GetEasing(GetValue(configurationDictionary, "showEasing", "linear")),
                 HideMethod = GetHideMethod(GetValue(configurationDictionary, new[] { "hideMethod", "closeMethod" }, "fadeOut")),
                 HideDuration = GetValue(configurationDictionary, new[] { "hideDuration", "closeDuration" }, 1000L, Convert.ToInt64),
-                HideEasing = GetEasing(GetValue(configurationDictionary, new[] { "hideEasing", "closeEasing" }, "linear"))
+                HideEasing = GetEasing(GetValue(configurationDictionary, new[] { "hideEasing", "closeEasing" }, "linear")),
+                Width = GetValue(configurationDictionary, "width", 300U, Convert.ToUInt32),
+                HorizontalOffset = GetValue(configurationDictionary, "hOffset", 20U, Convert.ToUInt32),
+                VerticalOffset = GetValue(configurationDictionary, "vOffset", 20U, Convert.ToUInt32)
             };
 
             return configuration;

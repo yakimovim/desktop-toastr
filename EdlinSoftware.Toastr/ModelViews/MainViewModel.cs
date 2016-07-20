@@ -37,8 +37,7 @@ namespace EdlinSoftware.Toastr.ModelViews
                 return new DelegateCommand((arg) =>
                 {
                     MessageBox.Show(string.Format("Hello, {0}", Name));
-                },
-                (arg) => !string.IsNullOrWhiteSpace(Name));
+                });
             }
         }
     }

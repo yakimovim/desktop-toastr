@@ -40,22 +40,28 @@
         ToastrHideMethods HideMethod { get; }
         long HideDuration { get; }
         ToastrEasings HideEasing { get; }
+        uint Width { get; }
+        uint HorizontalOffset { get; }
+        uint VerticalOffset { get; }
     }
 
     public class ToastrConfiguration : IToastrConfiguration
     {
-          public bool CloseButton { get; set; }
-          public bool NewestOnTop { get; set; }
-          public bool ProgressBar { get; set; }
-          public ToastrPositions PositionClass { get; set; }
-          public bool PreventDuplicates { get; set; }
-          public long TimeOut { get; set; }
-          public long ExtendedTimeOut { get; set; }
-          public ToastrShowMethods ShowMethod { get; set; }
-          public long ShowDuration { get; set; }
-          public ToastrEasings ShowEasing { get; set; }
-          public ToastrHideMethods HideMethod { get; set; }
-          public long HideDuration { get; set; }
-          public ToastrEasings HideEasing { get; set; }
+        public bool CloseButton { get; set; }
+        public bool NewestOnTop { get; set; }
+        public bool ProgressBar { get; set; }
+        public ToastrPositions PositionClass { get; set; }
+        public bool PreventDuplicates { get; set; }
+        public long TimeOut { get; set; }
+        public long ExtendedTimeOut { get; set; }
+        public ToastrShowMethods ShowMethod { get; set; }
+        public long ShowDuration { get; set; }
+        public ToastrEasings ShowEasing { get; set; }
+        public ToastrHideMethods HideMethod { get; set; }
+        public long HideDuration { get; set; }
+        public ToastrEasings HideEasing { get; set; }
+        public uint Width { get; set; }
+        public uint HorizontalOffset { get; set; }
+        public uint VerticalOffset { get; set; }
     }
 }

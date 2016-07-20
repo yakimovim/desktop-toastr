@@ -8,10 +8,51 @@
         WindowStyle="None"
         SizeToContent="Height"
         Background="Transparent"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
         Width="300">
-    <Border CornerRadius="10" Background="Green" Padding="10">
-        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </TextBlock>
+    <Border CornerRadius="10" Background="Green" Padding="10" MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                x:Name="TypeImage"
+                Grid.Column="0"
+                Width="24"
+                Height="24"
+                VerticalAlignment="Center"/>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="TitleText"
+                        Grid.Column="0"
+                        TextWrapping="Wrap" 
+                        HorizontalAlignment="Left" 
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Visibility="Collapsed"/>
+                    <Label
+                        x:Name="CloseButton"
+                        Grid.Column="1"
+                        Content="×"
+                        FontWeight="ExtraBold"
+                        Foreground="White"
+                        VerticalAlignment="Top"
+                        MouseUp="OnCloseClick"/>
+                </Grid>
+                <TextBlock 
+                    x:Name="MessageText"
+                    TextWrapping="Wrap" 
+                    HorizontalAlignment="Center" 
+                    Foreground="White"
+                    TextAlignment="Left" />
+            </StackPanel>
+        </Grid>
     </Border>
 </Window>
